@@ -1,0 +1,6 @@
+{
+  "name": "Quiz de Comportamento Humano nas Organizações",
+  "description": "Um quiz interativo com as 16 perguntas e gabaritos comentados sobre liderança, cultura, conflito, inteligência emocional e Balanced Scorecard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
