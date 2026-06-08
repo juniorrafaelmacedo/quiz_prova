@@ -22,21 +22,44 @@ import {
 
 interface StatsViewProps {
   attempts: QuizAttempt[];
+  activeSubject: 'Comportamento Humano nas Organizações' | 'Métodos e Inovação Científica';
   onClearHistory: () => void;
   onBackToMenu: () => void;
 }
 
-export function StatsView({ attempts, onClearHistory, onBackToMenu }: StatsViewProps) {
+export function StatsView({ attempts, activeSubject, onClearHistory, onBackToMenu }: StatsViewProps) {
   const [showConfirmClear, setShowConfirmClear] = useState(false);
 
-  // Se não houver tentativas
-  if (attempts.length === 0) {
+  // Identificar qual matéria pertence a tentativa (compatível retroativamente)
+  const getAttemptSubject = (attempt: QuizAttempt) => {
+    if (attempt.category) {
+      return attempt.category === 'Métodos e Inovação Científica' 
+        ? 'Métodos e Inovação Científica' 
+        : 'Comportamento Humano nas Organizações';
+    }
+    if (attempt.answers.length > 0) {
+      const qId = attempt.answers[0].questionId;
+      const q = QUESTIONS_DATA.find(item => item.id === qId);
+      if (q) {
+        return q.category === 'Métodos e Inovação Científica' 
+          ? 'Métodos e Inovação Científica' 
+          : 'Comportamento Humano nas Organizações';
+      }
+    }
+    return 'Comportamento Humano nas Organizações';
+  };
+
+  // Filtrar tentativas baseadas na matéria ativa
+  const filteredAttempts = attempts.filter(att => getAttemptSubject(att) === activeSubject);
+
+  // Se não houver tentativas para esta matéria
+  if (filteredAttempts.length === 0) {
     return (
       <div className="bg-white/[0.04] backdrop-blur-xl border border-white/10 text-white p-8 rounded-3xl max-w-2xl mx-auto shadow-2xl text-center space-y-6">
         <Trophy className="w-16 h-16 mx-auto text-yellow-500/20 animate-pulse" />
-        <h2 className="text-2xl font-bold tracking-tight text-white/95">Sem histórico disponível</h2>
+        <h2 className="text-2xl font-bold tracking-tight text-white/95">Sem histórico para {activeSubject === 'Comportamento Humano nas Organizações' ? 'Comportamento Humano' : 'Inovação Científica'}</h2>
         <p className="text-white/60 text-sm max-w-md mx-auto leading-relaxed">
-          Você ainda não realizou nenhuma tentativa de quiz. Suas estatísticas de desempenho detalhado, gráficos de acertos e relatórios de progresso aparecerão aqui assim que completar a primeira rodada.
+          Você ainda não realizou nenhuma tentativa de quiz nesta matéria. Suas estatísticas de desempenho detalhado, gráficos de acertos e relatórios de progresso aparecerão aqui assim que completar a primeira rodada.
         </p>
         <button
           onClick={onBackToMenu}
@@ -48,28 +71,30 @@ export function StatsView({ attempts, onClearHistory, onBackToMenu }: StatsViewP
     );
   }
 
-  // Cálculos consolidados
-  const totalAttempts = attempts.length;
+  // Cálculos consolidados para as tentativas filtradas
+  const totalAttempts = filteredAttempts.length;
   let totalMinutes = 0;
   let totalCorrect = 0;
   let totalAnswered = 0;
 
-  // Mapear acertos por categoria
-  const catStats: Record<CategoryType, { answered: number; correct: number }> = {
-    'Liderança e Poder': { answered: 0, correct: 0 },
-    'Cultura e Clima': { answered: 0, correct: 0 },
-    'Gestão Estratégica & CRM': { answered: 0, correct: 0 },
-    'Inteligência Emocional': { answered: 0, correct: 0 }
-  };
+  // Mapear acertos por categorias da matéria ativa
+  const categoriesList = activeSubject === 'Comportamento Humano nas Organizações'
+    ? ['Liderança e Poder', 'Cultura e Clima', 'Gestão Estratégica & CRM', 'Inteligência Emocional'] as CategoryType[]
+    : ['Métodos e Inovação Científica'] as CategoryType[];
 
-  attempts.forEach((att) => {
+  const catStats = {} as Record<CategoryType, { answered: number; correct: number }>;
+  categoriesList.forEach((cat) => {
+    catStats[cat] = { answered: 0, correct: 0 };
+  });
+
+  filteredAttempts.forEach((att) => {
     totalMinutes += att.timeSpent;
     totalCorrect += att.score;
     totalAnswered += att.totalQuestions;
 
     att.answers.forEach((ans) => {
       const q = QUESTIONS_DATA.find((item) => item.id === ans.questionId);
-      if (q) {
+      if (q && categoriesList.includes(q.category)) {
         catStats[q.category].answered += 1;
         if (ans.isCorrect) {
           catStats[q.category].correct += 1;
@@ -82,7 +107,6 @@ export function StatsView({ attempts, onClearHistory, onBackToMenu }: StatsViewP
   const averageSpentTime = Math.round(totalMinutes / totalAttempts);
 
   // Encontrar ponto forte e ponto fraco
-  const categoriesList = Object.keys(catStats) as CategoryType[];
   const performanceByCategory = categoriesList.map((cat) => {
     const stats = catStats[cat];
     const rate = stats.answered > 0 ? Math.round((stats.correct / stats.answered) * 100) : 0;
@@ -293,11 +317,11 @@ export function StatsView({ attempts, onClearHistory, onBackToMenu }: StatsViewP
       <div className="p-6 bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl space-y-4">
         <div>
           <h3 className="text-base font-bold text-white">Últimas Atividades</h3>
-          <p className="text-white/60 text-xs">Histórico cronológico detalhado das suas rodadas de quiz respondidas.</p>
+          <p className="text-white/60 text-xs">Histórico cronológico detalhado das suas rodadas de quiz respondidas para esta matéria.</p>
         </div>
 
         <div className="divide-y divide-white/5 overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-inner">
-          {attempts.slice(0, 5).map((attempt) => {
+          {filteredAttempts.slice(0, 5).map((attempt) => {
             const formattedDate = new Date(attempt.date).toLocaleString('pt-BR', {
               day: '2-digit',
               month: 'short',

@@ -24,34 +24,70 @@ import {
 
 interface DashboardProps {
   attempts: QuizAttempt[];
+  activeSubject: 'Comportamento Humano nas Organizações' | 'Métodos e Inovação Científica';
   onStartQuiz: (mode: 'complete' | 'quick' | 'themed', count?: number, category?: CategoryType) => void;
   onViewStats: () => void;
   onViewLastReview: (attempt: QuizAttempt) => void;
 }
 
-export function Dashboard({ attempts, onStartQuiz, onViewStats, onViewLastReview }: DashboardProps) {
+export function Dashboard({ attempts, activeSubject, onStartQuiz, onViewStats, onViewLastReview }: DashboardProps) {
   const [selectedTheme, setSelectedTheme] = useState<CategoryType | 'all'>('all');
 
-  // Determinar recorde do usuário
-  const bestAttempt = attempts.length > 0 
-    ? [...attempts].sort((a, b) => (b.score / b.totalQuestions) - (a.score / a.totalQuestions))[0]
+  // Identificar qual matéria pertence a tentativa (compatível retroativamente)
+  const getAttemptSubject = (attempt: QuizAttempt) => {
+    if (attempt.category) {
+      return attempt.category === 'Métodos e Inovação Científica' 
+        ? 'Métodos e Inovação Científica' 
+        : 'Comportamento Humano nas Organizações';
+    }
+    if (attempt.answers.length > 0) {
+      const qId = attempt.answers[0].questionId;
+      const q = QUESTIONS_DATA.find(item => item.id === qId);
+      if (q) {
+        return q.category === 'Métodos e Inovação Científica' 
+          ? 'Métodos e Inovação Científica' 
+          : 'Comportamento Humano nas Organizações';
+      }
+    }
+    return 'Comportamento Humano nas Organizações';
+  };
+
+  // Filtrar tentativas baseadas na matéria ativa
+  const filteredAttempts = attempts.filter(att => getAttemptSubject(att) === activeSubject);
+
+  // Determinar recorde do usuário para esta matéria
+  const bestAttempt = filteredAttempts.length > 0 
+    ? [...filteredAttempts].sort((a, b) => (b.score / b.totalQuestions) - (a.score / a.totalQuestions))[0]
     : null;
 
-  const totalAnswered = attempts.reduce((acc, curr) => acc + curr.totalQuestions, 0);
-  const totalCorrect = attempts.reduce((acc, curr) => acc + curr.score, 0);
-  const overallRate = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 105) : 0; // focado em 100%
+  const totalAnswered = filteredAttempts.reduce((acc, curr) => acc + curr.totalQuestions, 0);
+  const totalCorrect = filteredAttempts.reduce((acc, curr) => acc + curr.score, 0);
   const actualOverallRate = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
 
-  const categories: CategoryType[] = [
-    'Liderança e Poder',
-    'Cultura e Clima',
-    'Gestão Estratégica & CRM',
-    'Inteligência Emocional'
-  ];
+  // Filtrar categorias específicas da matéria de modo dinâmico
+  const categories: CategoryType[] = activeSubject === 'Comportamento Humano nas Organizações'
+    ? [
+        'Liderança e Poder',
+        'Cultura e Clima',
+        'Gestão Estratégica & CRM',
+        'Inteligência Emocional'
+      ]
+    : [
+        'Métodos e Inovação Científica'
+      ];
 
   const getCategoryCount = (cat: CategoryType) => {
     return QUESTIONS_DATA.filter(q => q.category === cat).length;
   };
+
+  // Filtrar o total de questões disponíveis para a matéria ativa
+  const subjectTotalQuestions = QUESTIONS_DATA.filter(q => {
+    if (activeSubject === 'Comportamento Humano nas Organizações') {
+      return q.category !== 'Métodos e Inovação Científica';
+    } else {
+      return q.category === 'Métodos e Inovação Científica';
+    }
+  }).length;
 
   return (
     <div className="space-y-8 max-w-4xl mx-auto pb-12">
@@ -61,13 +97,17 @@ export function Dashboard({ attempts, onStartQuiz, onViewStats, onViewLastReview
         <div className="space-y-3 z-10 text-center md:text-left">
           <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-blue-400 text-xs font-bold font-mono tracking-wide uppercase border border-white/15 shadow-sm">
             <GraduationCap className="w-4 h-4 text-blue-400" />
-            Comportamento Humano nas Organizações
+            {activeSubject}
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-tight">
-            Portal de Treinamento e Quiz Interativo
+            {activeSubject === 'Comportamento Humano nas Organizações' 
+              ? 'Portal de Treinamento e Quiz Interativo' 
+              : 'Metodologia Científica e Normatização'}
           </h1>
           <p className="text-white/70 text-xs sm:text-sm max-w-xl leading-relaxed">
-            Domine os conceitos de Liderança, Clima, Cultura, Teorias de Tomada de Decisão e Inteligência Emocional com base em testes acadêmicos oficiais e explicações científicas detalhadas.
+            {activeSubject === 'Comportamento Humano nas Organizações'
+              ? 'Domine os conceitos de Liderança, Clima, Cultura, Teorias de Tomada de Decisão e Inteligência Emocional com base em testes acadêmicos oficiais e explicações científicas detalhadas.'
+              : 'Aprimore seus conhecimentos em tipos de pesquisas, citações diretas/indiretas, normas ABNT de artigos e projetos, e metodologias de análise qualitativa/quantitativa.'}
           </p>
         </div>
 
@@ -105,7 +145,7 @@ export function Dashboard({ attempts, onStartQuiz, onViewStats, onViewLastReview
                 </div>
                 <h3 className="text-base font-bold text-white">Simulado Completo</h3>
                 <p className="text-white/60 text-xs leading-relaxed">
-                  Avalie-se respondendo todas as 16 perguntas oficiais. Perfeito para simular a experiência de provas e exames integrados.
+                  Avalie-se respondendo todas as {subjectTotalQuestions} perguntas oficiais desta matéria. Perfeito para simular a prova real.
                 </p>
               </div>
               <button
@@ -113,7 +153,7 @@ export function Dashboard({ attempts, onStartQuiz, onViewStats, onViewLastReview
                 className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-450 hover:to-purple-550 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-lg hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
               >
                 <Play className="w-3.5 h-3.5 fill-white text-white" />
-                Iniciar Simulado (16 Q)
+                Iniciar Simulado ({subjectTotalQuestions} Q)
               </button>
             </div>
 
@@ -125,7 +165,7 @@ export function Dashboard({ attempts, onStartQuiz, onViewStats, onViewLastReview
                 </div>
                 <h3 className="text-base font-bold text-white">Treino Rápido</h3>
                 <p className="text-white/60 text-xs leading-relaxed">
-                  Sem tempo para o simulado completo? Responda 5 questões sorteadas de forma aleatória do banco conceitual.
+                  Sem tempo para o simulado completo? Responda 5 questões sorteadas do banco exclusivo desta matéria.
                 </p>
               </div>
               <button
@@ -143,7 +183,7 @@ export function Dashboard({ attempts, onStartQuiz, onViewStats, onViewLastReview
           <div className="p-6 bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl space-y-5">
             <div className="space-y-1">
               <h3 className="text-sm font-bold text-white">Estudo Temático Segmentado</h3>
-              <p className="text-white/60 text-xs leading-relaxed">Deseja reforçar apenas uma área de conhecimento específica? Selecione o tema desejado abaixo:</p>
+              <p className="text-white/60 text-xs leading-relaxed">Deseja focar em um tópico específico de {activeSubject === 'Comportamento Humano nas Organizações' ? 'Comportamento Humano' : 'Metodologia'}? Selecione abaixo:</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -209,7 +249,7 @@ export function Dashboard({ attempts, onStartQuiz, onViewStats, onViewLastReview
               <div className="text-center py-6 space-y-2.5">
                 <Brain className="w-10 h-10 mx-auto text-white/20 animate-pulse" />
                 <p className="text-white/40 text-xs leading-relaxed">
-                  Nenhum registro ainda. Suas conquistas e recordes aparecerão aqui.
+                  Não há tentativas nesta matéria. Seu recorde aparecerá aqui assim que concluir um simulado.
                 </p>
               </div>
             )}
@@ -220,9 +260,9 @@ export function Dashboard({ attempts, onStartQuiz, onViewStats, onViewLastReview
             <div className="flex items-center justify-between">
               <h3 className="text-sm font-bold text-white/90 flex items-center gap-1.5">
                 <History className="w-4.5 h-4.5 text-blue-400" />
-                Atividades Finais
+                Atividades Recentes
               </h3>
-              {attempts.length > 0 && (
+              {filteredAttempts.length > 0 && (
                 <button 
                   onClick={onViewStats}
                   className="text-blue-400 hover:text-blue-300 text-3xs font-mono uppercase tracking-wider cursor-pointer font-bold"
@@ -232,9 +272,9 @@ export function Dashboard({ attempts, onStartQuiz, onViewStats, onViewLastReview
               )}
             </div>
 
-            {attempts.length > 0 ? (
+            {filteredAttempts.length > 0 ? (
               <div className="space-y-3.5 max-h-[190px] overflow-y-auto pr-1">
-                {attempts.slice(0, 3).map((att) => {
+                {filteredAttempts.slice(0, 3).map((att) => {
                   const pct = Math.round((att.score / att.totalQuestions) * 100);
                   return (
                     <div 
@@ -259,7 +299,7 @@ export function Dashboard({ attempts, onStartQuiz, onViewStats, onViewLastReview
               </div>
             ) : (
               <p className="text-white/40 text-xs leading-relaxed text-center py-4">
-                Histórico vazio. Conclua qualquer simulado para ver o registro cronológico.
+                Nenhum registro nesta matéria ainda.
               </p>
             )}
           </div>

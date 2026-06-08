@@ -20,11 +20,13 @@ import {
   RotateCcw,
   Menu,
   ChevronRight,
-  HelpCircle
+  HelpCircle,
+  Briefcase
 } from 'lucide-react';
 
 export default function App() {
   const [view, setView] = useState<'dashboard' | 'quiz' | 'stats' | 'review'>('dashboard');
+  const [activeSubject, setActiveSubject] = useState<'Comportamento Humano nas Organizações' | 'Métodos e Inovação Científica'>('Comportamento Humano nas Organizações');
   const [attempts, setAttempts] = useState<QuizAttempt[]>([]);
   const [activeQuestions, setActiveQuestions] = useState<Question[]>([]);
   const [activeMode, setActiveMode] = useState<'complete' | 'quick' | 'themed'>('complete');
@@ -46,6 +48,13 @@ export default function App() {
     if (mode === 'themed' && category) {
       // Filtrar perguntas da categoria
       selectedQuestions = selectedQuestions.filter((q) => q.category === category);
+    } else {
+      // Filtrar por matéria ativa se estiver em modo Completo ou Rápido!
+      if (activeSubject === 'Comportamento Humano nas Organizações') {
+        selectedQuestions = selectedQuestions.filter((q) => q.category !== 'Métodos e Inovação Científica');
+      } else {
+        selectedQuestions = selectedQuestions.filter((q) => q.category === 'Métodos e Inovação Científica');
+      }
     }
 
     // Embaralhar as perguntas
@@ -135,10 +144,39 @@ export default function App() {
       </header>
 
       {/* Conteúdo Principal */}
-      <main className="flex-1 max-w-5xl w-full mx-auto px-4 py-8 relative z-10">
+      <main className="flex-1 max-w-5xl w-full mx-auto px-4 py-8 relative z-10 animate-fade-in">
+        {/* Selector de Matéria (Tabs) */}
+        {(view === 'dashboard' || view === 'stats') && (
+          <div className="flex p-1 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl max-w-2xl mx-auto mb-8 shadow-2xl relative z-20">
+            <button
+              onClick={() => setActiveSubject('Comportamento Humano nas Organizações')}
+              className={`flex-1 py-3 px-4 rounded-xl text-[11px] sm:text-xs font-black tracking-wider transition-all uppercase flex items-center justify-center gap-2 cursor-pointer ${
+                activeSubject === 'Comportamento Humano nas Organizações'
+                  ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg scale-[1.02]'
+                  : 'text-white/60 hover:text-white hover:bg-white/5'
+              }`}
+            >
+              <Briefcase className="w-4 h-4 text-white" />
+              Comportamento Humano
+            </button>
+            <button
+              onClick={() => setActiveSubject('Métodos e Inovação Científica')}
+              className={`flex-1 py-3 px-4 rounded-xl text-[11px] sm:text-xs font-black tracking-wider transition-all uppercase flex items-center justify-center gap-2 cursor-pointer ${
+                activeSubject === 'Métodos e Inovação Científica'
+                  ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg scale-[1.02]'
+                  : 'text-white/60 hover:text-white hover:bg-white/5'
+              }`}
+            >
+              <BookOpen className="w-4 h-4 text-white" />
+              Métodos e Inovação Científica
+            </button>
+          </div>
+        )}
+
         {view === 'dashboard' && (
           <Dashboard
             attempts={attempts}
+            activeSubject={activeSubject}
             onStartQuiz={handleStartQuiz}
             onViewStats={() => setView('stats')}
             onViewLastReview={handleViewLastReview}
@@ -158,6 +196,7 @@ export default function App() {
         {view === 'stats' && (
           <StatsView
             attempts={attempts}
+            activeSubject={activeSubject}
             onClearHistory={handleClearHistory}
             onBackToMenu={() => setView('dashboard')}
           />
@@ -180,7 +219,7 @@ export default function App() {
           <div className="flex gap-4">
             <span className="flex items-center gap-1">
               <BookOpen className="w-3.5 h-3.5" />
-              16 Questões Preparatórias
+              {QUESTIONS_DATA.length} Questões Preparatórias
             </span>
             <span>•</span>
             <span className="flex items-center gap-1">

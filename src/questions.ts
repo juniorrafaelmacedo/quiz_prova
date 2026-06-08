@@ -277,5 +277,245 @@ export const QUESTIONS_DATA: Question[] = [
     ],
     correctAnswer: 'C',
     explanation: 'Assertividade (expressar metas e alinhar feedbacks de modo direto, resoluto e respeitoso) e Flexibilidade (ajustar caminhos táticos e aceitar ponderações do grupo mediante incertezas organizacionais) são duas qualidades indispensáveis à liderança.'
+  },
+  {
+    id: 18,
+    category: 'Métodos e Inovação Científica',
+    title: 'Questão 1 - (Costa Val, 1991)',
+    source: 'Costa Val, 1991',
+    text: 'Conforme Costa Val (1991), a textualidade resulta de um conjunto de fatores que permitem distinguir um simples agrupamento de frases de um texto efetivo. Retomando Beaugrande e Dressler (1983), esses autores definem sete fatores da textualidade: coerência e coesão (de natureza linguística e conceitual), além de intencionalidade, aceitabilidade, situacionalidade, informatividade e intertextualidade (de natureza social e pragmática).\n\nCOSTA VAL, Maria da Graça. Redação e Textualidade. São Paulo: Martins Fontes, 1991.\n\nEntre esses fatores, a intencionalidade e a aceitabilidade estão diretamente relacionadas aos participantes da comunicação. Assim, é correto afirmar que a intencionalidade está para ________________ e a aceitabilidade está para ___________________.\n\nAssinale a alternativa que preenche, respectivamente e corretamente, as lacunas:',
+    options: [
+      { letter: 'A', text: 'o contexto — a situação comunicativa.' },
+      { letter: 'B', text: 'o código — o canal.' },
+      { letter: 'C', text: 'a mensagem — o contexto.' },
+      { letter: 'D', text: 'o receptor — o emissor.' },
+      { letter: 'E', text: 'o emissor — o receptor.' }
+    ],
+    correctAnswer: 'E',
+    explanation: 'A intencionalidade refere-se à atitude do emissor em produzir um texto coerente para atingir seus objetivos de comunicação, enquanto a aceitabilidade refere-se à atitude do receptor em interpretar o texto como uma comunicação relevante e coerente.'
+  },
+  {
+    id: 19,
+    category: 'Métodos e Inovação Científica',
+    title: 'Questão 2 - (Método Indutivo)',
+    source: 'Tipos de Pesquisa / Métodos de Raciocínio',
+    text: 'A pesquisa científica envolve procedimentos racionais e sistemáticos que permitem a produção de conhecimento. Em muitos casos, o pesquisador parte da observação de fatos específicos para alcançar conclusions mais amplas, que expliquem um conjunto maior de fenômenos. Esse tipo de raciocínio é amplamente utilizado nas ciências empíricas. Dado o exposto, avalie o trecho a seguir:\n\n“É o processo lógico pelo qual, a partir da observação de casos particulares e da verificação de regularidades, chega-se a uma conclusão geral que explica os fenômenos observados.”\n\nCom base no texto, pode-se afirmar que o trecho faz referência ao método:',
+    options: [
+      { letter: 'A', text: 'indutivo, que parte de casos específicos observados para chegar a uma conclusão geral.' },
+      { letter: 'B', text: 'dialético, que se baseia na análise de contradições entre diferentes pontos de vista para compreender a realidade.' },
+      { letter: 'C', text: 'dedutivo, que parte de princípios gerais já estabelecidos para explicar casos particulares.' },
+      { letter: 'D', text: 'científico, que consiste em um conjunto de procedimentos gerais utilizados em qualquer investigação acadêmica.' },
+      { letter: 'E', text: 'hipotético-dedutivo, que se baseia na formulação de hipóteses e na testagem empírica de suas consequências.' }
+    ],
+    correctAnswer: 'A',
+    explanation: 'O método indutivo é um processo mental que parte de observações ou dados particulares para, após a constatação de padrões ou regularidades, formular conclusões gerais aplicáveis a um grupo mais amplo de fenômenos.'
+  },
+  {
+    id: 20,
+    category: 'Métodos e Inovação Científica',
+    title: 'Questão 3 - (Observação e Raciocínio)',
+    source: 'Métodos Científicos / Tipos de Raciocínio',
+    text: '“Todos os estudantes entrevistados afirmaram que utilizam o celular para estudar. Logo, pode-se concluir que todos os estudantes utilizam o celular para estudar.” Esse tipo de raciocínio parte da observação de casos particulares considerados verdadeiros e, a partir deles, chega a uma conclusão geral que extrapola os dados analisados.\n\nDiante do texto, pode-se afirmar que esse método científico é chamado de:',
+    options: [
+      { letter: 'A', text: 'fenomenológico, ou seja, abordagem que descreve a experiência vivida tal como ela se apresenta à consciência.' },
+      { letter: 'B', text: 'hipotético-dedutivo, ou seja, abordagem que parte da formulação de hipóteses e da dedução de consequências testáveis.' },
+      { letter: 'C', text: 'dialético, ou seja, método baseado na análise de contradições e conflitos de ideias para produção de conhecimento.' },
+      { letter: 'D', text: 'dedutivo, ou seja, método que parte de princípios gerais já estabelecidos para explicar casos particulares.' },
+      { letter: 'E', text: 'indutivo, ou seja, abordagem de pesquisa que parte de observações específicas para chegar a conclusões gerais.' }
+    ],
+    correctAnswer: 'E',
+    explanation: 'Este é outro exemplo de método indutivo (amostragem particular generalizada para toda a população de estudantes). O raciocínio indutivo coleta e agrupa dados singulares (a amostragem) e infere uma lei geral.'
+  },
+  {
+    id: 21,
+    category: 'Métodos e Inovação Científica',
+    title: 'Questão 4 - (Caso Pontiac e Método Científico)',
+    source: 'Caso Pontiac / Etapas de Resolução',
+    text: 'O gerente da divisão de carros da Pontiac, nos Estados Unidos da América, recebeu uma curiosa carta de reclamação de um cliente: “(...) Eu posso parecer louco, mas o fato é que nós temos uma tradição em nossa família, que é a de comer sorvete depois do jantar. Repetimos este hábito todas as noites, variando apenas o tipo do sorvete, e eu sou o encarregado de ir comprá-lo. Sempre que eu compro sorvete de baunilha, quando volto da loja para casa, o carro não funciona. Se compro qualquer outro tipo de sorvete, o carro funciona normalmente.” Apesar das piadas, um engenheiro da empresa foi encarregado de atender à reclamação. Repetiu a exata rotina com o reclamante e constatou que, de fato, o carro só não funcionava quando se comprava sorvete de baunilha. Depois de duas semanas de investigação, o engenheiro descobriu que, quando escolhia sorvete de baunilha, o comprador gastava menos tempo, porque esse tipo de sorvete estava bem na frente da loja. Examinando o carro, fez nova descoberta: como o tempo de compra era muito menor no caso do sorvete de baunilha, os vapores na tubulação de alimentação de combustível não se dissipavam, impedindo que a nova partida fosse instantânea. A partir desse episódio, a Pontiac mudou o sistema de alimentação de combustível, introduzindo alteração em todos os modelos a partir da linha 99.\n\nDisponível em: <http://newsworlds.wordpress.com> (com adaptações).\n\nSuponha que o engenheiro tenha utilizado as seguintes etapas na solução do problema:\nI - Fazer testes e ensaios para confirmar quais são as variáveis relevantes;\nII - Constatar a natureza sistemática do problema;\nIII - Criar hipóteses sobre possíveis variáveis significativas;\nIV - Propor alterações no sistema em estudo.\n\nConsiderando que as etapas I, II e III não estão listadas na ordem em que devem ocorrer, qual é o ordenamento correto dessas três etapas?',
+    options: [
+      { letter: 'A', text: 'II, III, I.' },
+      { letter: 'B', text: 'II, I, III.' },
+      { letter: 'C', text: 'I, III, II.' },
+      { letter: 'D', text: 'III, I, II.' },
+      { letter: 'E', text: 'III, II, I.' }
+    ],
+    correctAnswer: 'A',
+    explanation: 'A ordem metodológica lógica da investigação científica é: primeiro, constatar a existência do fenômeno e sua natureza sistemática (II); depois, idealizar conjecturas ou hipóteses teóricas das variáveis envolvidas (III); e, por fim, realizar testes instrumentais/ensaios práticos para coletar e analisar os dados que as provam ou dão por terra (I).'
+  },
+  {
+    id: 22,
+    category: 'Métodos e Inovação Científica',
+    title: 'Questão 5 - (Finalidades da Pesquisa Científica)',
+    source: 'Tipos de Pesquisa / Finalidades',
+    text: 'A pesquisa científica pode assumir diferentes finalidades, dependendo do objetivo do investigador. Em alguns casos, o pesquisador limita-se a observar e registrar fenômenos, buscando compreender suas características, frequências e relações, sem interferir diretamente na realidade estudada. Para isso, utiliza técnicas como questionários, entrevistas e observações sistemáticas.\n\nConsiderando o texto apresentado, assinale a alternativa que corresponde ao tipo de pesquisa descrito:',
+    options: [
+      { letter: 'A', text: 'Pesquisa bibliográfica, que se baseia exclusivamente na análise de materiais já publicados.' },
+      { letter: 'B', text: 'Pesquisa experimental, que se caracteriza pela manipulação de variáveis para testar hipóteses sob controle rigoroso.' },
+      { letter: 'C', text: 'Pesquisa exploratória, que busca maior familiaridade com o problema, geralmente em estudos iniciais.' },
+      { letter: 'D', text: 'Pesquisa explicativa, que tem como foco identificar causas e explicar a origem dos fenômenos.' },
+      { letter: 'E', text: 'Pesquisa descritiva, que tem como objetivo principal observar, registrar e analisar fenômenos sem manipulá-los.' }
+    ],
+    correctAnswer: 'E',
+    explanation: 'A pesquisa descritiva tem como meta traçar um panorama de fatos, populações ou fenômenos, registrando suas características sem interferir deliberadamente ou manipular variáveis ambientais.'
+  },
+  {
+    id: 23,
+    category: 'Métodos e Inovação Científica',
+    title: 'Questão 6 - (O Problema de Pesquisa)',
+    source: 'Delineamento Metodológico',
+    text: 'A formulação de problemas é uma etapa essencial da pesquisa científica, pois é a partir dela que se define o que será investigado. Um problema bem construído orienta todo o processo investigativo, desde a escolha dos métodos até a análise dos resultados, garantindo coerência e foco ao estudo. Considerando o texto apresentado, assinale a alternativa correta:',
+    options: [
+      { letter: 'A', text: 'Toda pesquisa pode ser realizada sem a necessidade de um problema inicial definido.' },
+      { letter: 'B', text: 'O problema de pesquisa é apenas uma formalidade exigida em trabalhos acadêmicos.' },
+      { letter: 'C', text: 'O problema de pesquisa orienta todo o processo investigativo, sendo elemento central do estudo.' },
+      { letter: 'D', text: 'O problema de pesquisa é substituído pelas hipóteses ao longo da investigação.' },
+      { letter: 'E', text: 'O problema de pesquisa é menos importante do que a coleta de dados.' }
+    ],
+    correctAnswer: 'C',
+    explanation: 'O problema de pesquisa é a mola propulsora e o núcleo definidor de qualquer estudo científico. Ele determina a questão que a investigação deseja responder, condicionando os materiais, métodos e bases conceituais adequadas.'
+  },
+  {
+    id: 24,
+    category: 'Métodos e Inovação Científica',
+    title: 'Questão 7 - (Etapas do Método Científico)',
+    source: 'Método Científico na Prática',
+    text: 'Um pesquisador da área da saúde identificou um aumento de infecções hospitalares em um determinado setor de um hospital. Para compreender e propor soluções para o problema, ele decidiu seguir um método científico, organizando sua investigação de forma sistemática e sequencial. Nesse caso, as etapas do método científico que devem ser seguidas pelo pesquisador são:',
+    options: [
+      { letter: 'A', text: 'levantamento de dados; definição de conclusões; formulação de hipótese; análise de resultados.' },
+      { letter: 'B', text: 'formulação de hipótese; coleta de dados; definição do problema; apresentação dos resultados.' },
+      { letter: 'C', text: 'definição do problema; revisão da literatura; formulação de hipótese; coleta e análise de dados; avaliação dos resultados.' },
+      { letter: 'D', text: 'revisão da literatura; coleta de dados; formulação de problema; avaliação dos resultados; testagem da hipótese.' },
+      { letter: 'E', text: 'apresentação dos resultados; formulação de hipótese; coleta de dados; definição do problema; análise estatística.' }
+    ],
+    correctAnswer: 'C',
+    explanation: 'A sequência metodológica correta inicia com a definição do problema, passa pela revisão de trabalhos clássicos já publicados na literatura para embasamento do estudo, propõe uma hipótese lógica explicativa sobre o desvio de infecções, executa coleta e análise científica de dados e conclui com a avaliação crítica final e publicação dos resultados.'
+  },
+  {
+    id: 25,
+    category: 'Métodos e Inovação Científica',
+    title: 'Questão 8 - (Processo Decisório Organizacional)',
+    source: 'Racionalidade Organizacional',
+    text: 'Uma decisão organizacional eficiente depende de um processo estruturado, no qual o gestor analisa a situação de forma racional, identifica problemas, avalia possibilidades e escolhe a melhor alternativa com base em critérios definidos. Esse processo reduz a influência de opiniões subjetivas e aumenta a eficácia das ações.\n\nConsiderando o texto apresentado, assinale a alternativa que indica a sequência correta do processo decisório:',
+    options: [
+      { letter: 'A', text: 'Implementação da decisão → Identificação do problema → Diagnóstico → Escolha da alternativa → Avaliação.' },
+      { letter: 'B', text: 'Diagnóstico → Identificação do problema → Geração de alternativas → Escolha da alternativa → Implementação e avaliação.' },
+      { letter: 'C', text: 'Identificação do problema → Diagnóstico → Geração de alternativas → Escolha da alternativa → Implementação e avaliação.' },
+      { letter: 'D', text: 'Geração de alternativas → Diagnóstico → Identificação do problema → Escolha da alternativa → Implementação.' },
+      { letter: 'E', text: 'Identificação do problema → Escolha da alternativa → Diagnóstico → Geração de alternativas → Avaliação.' }
+    ],
+    correctAnswer: 'C',
+    explanation: 'O ciclo racional decisório é encadeado por: Identificação (percepção da falha ou desvio), Diagnóstico (compreensão das raízes), Geração (elucidação de remédios ou táticas possíveis), Escolha da alternativa de preferência estratégica, Implementação operacional efetiva, e Avaliação retrospectiva sistemática dos frutos colhidos.'
+  },
+  {
+    id: 26,
+    category: 'Métodos e Inovação Científica',
+    title: 'Questão 9 - (Análise de Dados e Teoria)',
+    source: 'Fases da Investigação Científica',
+    text: 'Após a coleta e o tratamento dos dados em uma pesquisa científica, o pesquisador passa para uma etapa fundamental do processo investigativo. Nesse momento, os resultados obtidos são analisados à luz do referencial teórico adotado, buscando-se compreender seu significado e suas implicações para o problema estudado.\n\nConsiderando o texto apresentado, assinale a alternativa que indica corretamente essa etapa:',
+    options: [
+      { letter: 'A', text: 'confirmação definitiva da hipótese formulada, independentemente das limitações do estudo.' },
+      { letter: 'B', text: 'repetição obrigatória do experimento até que os resultados sejam iguais aos esperados.' },
+      { letter: 'C', text: 'interpretação dos resultados e construção de inferências a partir do referencial teórico.' },
+      { letter: 'D', text: 'exclusão de resultados que não estejam de acordo com a hipótese inicial.' },
+      { letter: 'E', text: 'finalização automática da pesquisa após a coleta dos dados.' }
+    ],
+    correctAnswer: 'C',
+    explanation: 'A etapa de interpretação dos resultados consiste justamente na aproximação dialética e na correlação reflexiva entre as evidências coletadas em campo e as lentes do referencial teórico adotado, sustentando inferências ricas para apoiar os objetivos da pesquisa.'
+  },
+  {
+    id: 27,
+    category: 'Métodos e Inovação Científica',
+    title: 'Questão 10 - (Características da Pesquisa Exploratória)',
+    source: 'Delineamento Metodológico / Tipos de Estudos',
+    text: 'A pesquisa exploratória é frequentemente utilizada quando o tema ainda não está suficientemente claro ou quando o pesquisador busca maior familiaridade com o objeto de estudo. Esse tipo de investigação permite ampliar o conhecimento inicial sobre um problema, contribuindo para a definição de hipóteses e para a delimitação de futuras pesquisas mais aprofundadas.\n\nConsiderando o contexto apresentado, avalie as afirmações a seguir:\n\nI. A pesquisa exploratória tem como finalidade principal proporcionar maior compreensão sobre um problema ainda pouco conhecido.\nII. Esse tipo de pesquisa pode auxiliar na formulação de hipóteses para estudos posteriores.\nIII. A pesquisa exploratória exige, obrigatoriamente, a testagem estatística de hipóteses já definidas.\nIV. A pesquisa exploratória contribui para delimitar e estruturar melhor o objeto de estudo.\n\nConsiderando os itens acima, é correto o que se afirma em:',
+    options: [
+      { letter: 'A', text: 'I e II, apenas.' },
+      { letter: 'B', text: 'I e IV, apenas.' },
+      { letter: 'C', text: 'I, II e III, apenas.' },
+      { letter: 'D', text: 'I, II e IV, apenas.' },
+      { letter: 'E', text: 'I, II, III e IV.' }
+    ],
+    correctAnswer: 'D',
+    explanation: 'As afirmações I, II e IV estão perfeitamente corretas e definem o escopo de estudos exploratórios. A asserção III é falsa porque a pesquisa exploratória é justamente aplicada na ausência de hipóteses rígidas consolidadas ou de dados estruturados que exigiriam testagem estatística dedutiva imediata.'
+  },
+  {
+    id: 28,
+    category: 'Métodos e Inovação Científica',
+    title: 'Questão 11 - (Familiarização com o Objeto)',
+    source: 'Tipos de Investigação Científica',
+    text: 'Um dos tipos de pesquisa científica consiste na realização de um estudo para a familiarização do pesquisador com o objeto que está sendo investigado durante a pesquisa. É uma pesquisa aplicada de maneira que o pesquisador tenha uma maior proximidade com o universo do objeto de estudo e que oferece informações e orienta a formulação das hipóteses da pesquisa. Ela também permite ao pesquisador escolher as técnicas mais adequadas para a sua pesquisa, para que ele possa decidir sobre as questões que necessitam maior atenção durante a investigação.\n\nA pesquisa em questão é denominada pesquisa:',
+    options: [
+      { letter: 'A', text: 'exploratória.' },
+      { letter: 'B', text: 'quantitativa.' },
+      { letter: 'C', text: 'indireta.' },
+      { letter: 'D', text: 'causal.' },
+      { letter: 'E', text: 'diferenciada.' }
+    ],
+    correctAnswer: 'A',
+    explanation: 'A pesquisa exploratória é aquela delineada para o desenvolvimento preliminar de ideias e hipóteses, buscando gerar intimidade e familiaridade do pesquisador com um assunto ou campo de estudo ainda pouco consolidado no meio científico.'
+  },
+  {
+    id: 29,
+    category: 'Métodos e Inovação Científica',
+    title: 'Questão 12 - (Análise de Resumos Acadêmicos)',
+    source: 'Análise de Redação e Métodos Científicos',
+    text: 'A seguir são apresentados dois resumos de pesquisas na área da Psicologia.\n\nESTUDO 1\nEste estudo objetivou investigar fantasias da criança enlutada pela morte de um ou de ambos os genitores e sua relação com o processo de elaboração do luto. Foram realizados estudos de caso com meninos e meninas, de três a oito anos de idade, indicados para atendimento psicoterápico em um serviço-escola de psicologia. Como instrumentos de investigação, foram utilizadas entrevistas com o genitor sobrevivente ou com o responsável pela criança, uma entrevista familiar, três entrevistas lúdicas e a aplicação do procedimento de desenhos-estórias com a criança.\nFRANCO, M. H. P.; MAZORRA, L. Criança e luto: vivências fantasmáticas diante da morte do genitor. Estudos de Psicologia, v. 24, n. 4, p. 503-511, 2007 (adaptado).\n\nESTUDO 2\nEste estudo buscou revisar a literatura dos artigos publicados em revistas científicas brasileiras sobre luto infantil decorrente de morte repentina de genitores, nos últimos 15 anos, cujos resumos encontravam-se disponíveis nas seguintes bases de dados: Index Psi, PsycINFO, Web of Science, Scopus, Medline, SciELO, Bireme e BVS-Psi. A busca nas bases de dados resultou em 11 publicações em revistas brasileiras, sendo duas de autoria estrangeira. Foram selecionados para a análise os artigos que abordavam perda por morte repentina de genitor na infância. Foram excluídos aqueles que tratavam de perda não ocasionada por morte e perdas por morte esperada, como as que são antecedidas de adoecimento. Após a leitura dos artigos, os dados foram classificados em categorias temáticas.\nANTON, M. C.; FAVERO, E. Morte repentina de genitores e luto infantil: uma revisão da literatura em periódicos científicos brasileiros. Interação em Psicologia, v. 15, n. 1, p. 101-110, 2011 (adaptado).\n\nConsiderando os resumos de pesquisa apresentados, assinale a opção correta no que diz respeito aos elementos básicos de uma pesquisa.',
+    options: [
+      { letter: 'A', text: 'Os dois resumos apresentam parte dos resultados obtidos e referencial teórico para a discussão dos resultados.' },
+      { letter: 'B', text: 'Os dois resumos descrevem o problema de pesquisa, mencionando o procedimento de coleta e análise de dados, bem como o delineamento de pesquisa adotado.' },
+      { letter: 'C', text: 'O primeiro resumo apresenta critérios de inclusão dos participantes da pesquisa e o segundo apresenta delineamento de pesquisa que indica revisão integrativa de literatura.' },
+      { letter: 'D', text: 'Os dois resumos tratam de pesquisas nas quais há coerência entre o problema de pesquisa e o método de investigação proposto, o que constitui um indicador de confiabilidade dos resultados obtidos.' },
+      { letter: 'E', text: 'O primeiro resumo apresenta a descrição dos instrumentos de coleta de dados coerentes com a abordagem qualitativa e, o segundo, descreve o procedimento de análise de dados com base em abordagem quantitativa e análise estatística.' }
+    ],
+    correctAnswer: 'D',
+    explanation: 'A correlação e coerência rígida entre as metas teóricas de um pesquisador e os roteiros ou ferramentas metodológicas que ele seleciona em campo (coerência entre o problema e o método) representam um dos requisitos primordiais para a confiabilidade e validade externa dos resultados obtidos.'
+  },
+  {
+    id: 30,
+    category: 'Métodos e Inovação Científica',
+    title: 'Questão 13 - (Elementos do Projeto de Pesquisa)',
+    source: 'Estruturação de Projetos',
+    text: 'O projeto de pesquisa é um documento essencial para orientar a execução de um estudo científico, pois organiza previamente as etapas que serão seguidas pelo pesquisador. Ele serve como um planejamento estruturado, garantindo coerência entre o problema investigado, os objetivos propostos e os métodos utilizados. Com base nesse contexto, assinale a alternativa que apresenta corretamente elementos constitutivos de um projeto de pesquisa:',
+    options: [
+      { letter: 'A', text: 'Tema, objetivos e metodologia.' },
+      { letter: 'B', text: 'Resultados finais, discussão e conclusão.' },
+      { letter: 'C', text: 'Hipóteses confirmadas, análise estatística e referências finais.' },
+      { letter: 'D', text: 'Resumo, resultados e conclusões obtidas.' },
+      { letter: 'E', text: 'Apenas introdução e revisão de literatura aprofundada.' }
+    ],
+    correctAnswer: 'A',
+    explanation: 'Como um documento preliminar prospectivo elaborado antes da execução prática do estudo, o projeto de pesquisa foca essencialmente na formulação do Tema, dos Objetivos estratégicos a serem perseguidos, e dos caminhos da Metodologia. Ele naturalmente não possui os resultados consolidados, as discussões finais ou conclusões (B, C, D) uma vez que a investigação fática ainda será efetuada.'
+  },
+  {
+    id: 31,
+    category: 'Métodos e Inovação Científica',
+    title: 'Questão 14 - (Estrutura do Projeto segundo Gerhardt)',
+    source: 'Gerhardt et al., 2009',
+    text: 'O projeto de pesquisa é o texto que estrutura a pesquisa, ou seja, o texto que rege e sintetiza o momento analítico do processo de investigação. A formulação de um projeto de pesquisa normalmente não ocorre no início do processo, mas, sim, uma vez delimitado o tema (e o problema correspondente) da pesquisa e, com base na escolha de um quadro teórico, elaboradas as hipóteses e, em função destas, selecionados tanto a documentação pertinente quanto os métodos e técnicas que serão empregados. E, uma vez reunidas essas informações, elas devem ser apresentadas em partes/seções específicas: título do projeto, introdução, revisão bibliográfica, metodologia (procedimentos metodológicos), bibliografia, cronograma e orçamento.\n\nGERHARDT, T. E. et al. Estrutura do projeto de pesquisa. In: GERHARDT, T. E.; SILVEIRA, D. T. Métodos de Pesquisa. Porto Alegre: Editora da UFRGS, 2009 (adaptado).\n\nConsiderando o texto apresentado e os elementos e as informações que fazem parte de um projeto de pesquisa, avalie as afirmações a seguir.\n\nI. O objetivo da pesquisa deve estar presente na introdução. Este, por sua vez, deve ser claro, de forma que pessoas não especializadas na disciplina ou área de pesquisa possam compreendê-lo.\nII. O título da pesquisa deve ser simplificado, com conceitos e expressões claras. O ideal é que o título seja elaborado antes do início da metodologia do trabalho, para que não se corra o risco de fugir do tema.\nIII. Os materiais e métodos devem incluir tanto os tipos de pesquisa quanto as técnicas de coleta e análise de dados. Neste contexto, é necessário relatar os procedimentos éticos que envolvem seres humanos que foram utilizados para a realização da pesquisa.\n\nÉ correto o que se afirma em:',
+    options: [
+      { letter: 'A', text: 'II, apenas.' },
+      { letter: 'B', text: 'III, apenas.' },
+      { letter: 'C', text: 'I e III, apenas.' },
+      { letter: 'D', text: 'II e III, apenas.' },
+      { letter: 'E', text: 'I, II e III.' }
+    ],
+    correctAnswer: 'C',
+    explanation: 'As afirmativas I e III estão corretas. A II é incorreta pois o título refinado e consolidado do projeto normalmente é um dos últimos passos formulados pelo pesquisador ou lapidado ao longo da pesquisa, existindo títulos provisórios iniciais de modo a não enrijecer o processo.'
+  },
+  {
+    id: 32,
+    category: 'Métodos e Inovação Científica',
+    title: 'Questão 15 - (Pesquisa Qualitativa e Análise de Conteúdo)',
+    source: 'Metodologia Qualitativa / Bardin',
+    text: 'A pesquisa qualitativa busca compreender fenômenos sociais a partir de seus significados, interpretações e contextos, não se limitando à mensuração numérica. Nesse tipo de pesquisa, a análise dos dados é uma etapa fundamental, pois permite organizar, interpretar e atribuir sentido às informações coletadas, geralmente por meio de materiais como entrevistas, observações e documentos. Considerando o contexto apresentado, avalie as afirmações a seguir:\n\nI. A análise de conteúdo consiste na interpretação sistemática de materiais textuais, como entrevistas e documentos, buscando compreender seus significados.\nII. A análise de conteúdo se limita exclusivamente à descrição literal das falas dos participantes, sem qualquer interpretação do pesquisador.\nIII. A análise de conteúdo pode envolver a organização dos dados em categorias temáticas, facilitando a interpretação dos resultados.\n\nÉ correto o que se afirma em:',
+    options: [
+      { letter: 'A', text: 'I, apenas.' },
+      { letter: 'B', text: 'II, apenas.' },
+      { letter: 'C', text: 'III, apenas.' },
+      { letter: 'D', text: 'I e III, apenas.' },
+      { letter: 'E', text: 'I, II e III.' }
+    ],
+    correctAnswer: 'D',
+    explanation: 'As asserções I e III correspondem às táticas de Análise de Conteúdo clássicas. A asserção II é incorreta pois a Análise de Conteúdo repousa ativamente nas competências interpretativas do pesquisador que vai muito além das descrições brutas para emergir relações lógicas subjacentes no texto.'
   }
 ];
