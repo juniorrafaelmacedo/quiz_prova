@@ -517,5 +517,309 @@ export const QUESTIONS_DATA: Question[] = [
     ],
     correctAnswer: 'D',
     explanation: 'As asserções I e III correspondem às táticas de Análise de Conteúdo clássicas. A asserção II é incorreta pois a Análise de Conteúdo repousa ativamente nas competências interpretativas do pesquisador que vai muito além das descrições brutas para emergir relações lógicas subjacentes no texto.'
+  },
+  {
+    id: 33,
+    category: 'Revisão de Prova',
+    title: 'Questão 1 - Inteligência Emocional nas Organizações',
+    source: 'Revisão de Prova (Basile)',
+    text: 'A inteligência emocional, amplamente difundida na gestão de pessoas dentro das organizações, é um importante conceito no desenvolvimento das habilidades de convivência social. Sabe-se que colaboradores mais “equilibrados” emocionalmente estabelecem uma relação mais saudável com o trabalho, são mais produtivos e mais resilientes e, consequentemente, buscam resultados positivos no trabalho, procurando superar os desafios estabelecidos.\n\nPORQUE\n\nA melhor utilização da inteligência emocional dos funcionários pela empresa ao adotar práticas e medidas preventivas como: incentivo de um clima organizacional ante estresse e melhoria das relações interpessoais no ambiente de trabalho, priorizando a qualidade de vida e o investimento no aprendizado contínuo através de treinamentos, pode ativar e estimular a inteligência geral, a motivação, a saúde física e mental e a produtividade dos colaboradores.\n\nAnalisando as afirmações acima, conclui-se que:',
+    options: [
+      { letter: 'A', text: 'as duas afirmações são verdadeiras, e a segunda não justifica a primeira.' },
+      { letter: 'B', text: 'as duas afirmações são verdadeiras, e a segunda justifica a primeira.' },
+      { letter: 'C', text: 'a primeira afirmação é falsa, e a segunda é verdadeira.' },
+      { letter: 'D', text: 'a primeira afirmação é verdadeira, e a segunda é falsa.' },
+      { letter: 'E', text: 'as duas afirmações são falsas.' }
+    ],
+    correctAnswer: 'B',
+    explanation: 'A inteligência emocional é crucial para o bem-estar e resiliência (Afirmação I). A segunda afirmação explica de forma direta como as ações integradoras de qualidade de vida promovem e ativam esse equilíbrio, justificando assim o porquê de os funcionários serem mais produtivos e saudáveis.'
+  },
+  {
+    id: 34,
+    category: 'Revisão de Prova',
+    title: 'Questão 2 - Teoria das Relações Humanas (Associação)',
+    source: 'Revisão de Prova (Basile)',
+    text: 'A respeito da Teoria das Relações Humanas, associe as colunas:\n\n1. Ciclo Motivacional\n2. Clima Organizacional\n3. Dinâmica de Grupo\n4. Frustração\n5. Liderança\n6. Motivação\n7. Necessidade de autorrealização\n\n( ) É o processo de surgimento e tentativa de satisfação de uma necessidade humana. O organismo permanece em estado de equilíbrio, que se rompe quando surge uma necessidade, que provoca um estado de tensão e desequilíbrio.\n\n( ) É a soma de interesses dos participantes de um grupo, que pode ser ativada por meio de estímulos e motivações.\n\n( ) É a influência interpessoal exercida numa situação e dirigida por meio do processo da comunicação humana para a consecução de um determinado objetivo.\n\n( ) São as necessidades humanas mais elevadas e significam o impulso de realizar o próprio potencial, de estar em contínuo autodesenvolvimento.\n\n( ) É a qualidade do ambiente psicológico de uma organização. Pode ser positivo e favorável ou negativo e desfavorável.\n\n( ) É a não resolução do ciclo motivacional devido a alguma barreira que impede a satisfação de uma necessidade humana.\n\n( ) Refere-se às forças dentro de cada pessoa, que a conduzem a um determinado comportamento.\n\nA sequência CORRETA é a seguinte:',
+    options: [
+      { letter: 'A', text: '1, 3, 5, 7, 2, 4, 6' },
+      { letter: 'B', text: '3, 5, 7, 2, 4, 6, 1' },
+      { letter: 'C', text: '7, 2, 4, 6, 1, 3, 5' },
+      { letter: 'D', text: '5, 7, 2, 1, 3, 4, 6' },
+      { letter: 'E', text: '2, 4, 1, 3, 5, 7, 6' }
+    ],
+    correctAnswer: 'A',
+    explanation: 'A sequência lógica de correlação corresponde a:\n- Ciclo Motivacional (1);\n- Dinâmica de Grupo (3);\n- Liderança (5);\n- Necessidade de autorrealização (7);\n- Clima Organizacional (2);\n- Frustração (4);\n- Motivação (6).\nIsso compõe ordenadamente: 1, 3, 5, 7, 2, 4, 6.'
+  },
+  {
+    id: 35,
+    category: 'Revisão de Prova',
+    title: 'Questão 3 - Planejamento de Carreira e Teoria de Maslow',
+    source: 'Revisão de Prova (Basile)',
+    text: 'Carlos Duran resolveu desenvolver um programa de planejamento de carreira, com o objetivo de motivar os funcionários para um processo de mudança que estava sendo delineado na empresa. Buscou uma teoria de motivação que pudesse fundamentar o programa e se decidiu pela teoria de Maslow.\n\nSobre essa teoria, julgue os itens a seguir:\n\nI. O salário por si só torna-se motivacional e é um fator de satisfação, como todos os fatores motivacionais.\nII. O ambiente do trabalho produz apenas satisfação ou insatisfação com o próprio ambiente, mas não motivação para o trabalho.\nIII. Se a remuneração de um colaborador dobrar ou triplicar, ele se tornará duas ou três vezes mais motivado e produzirá o dobro ou o triplo do que produzia antes.\nIV. As pessoas estão num processo de desenvolvimento contínuo e tendem a progredir ao longo das necessidades, buscando atender uma após outra, e orientam-se para a autorrealização.\nV. Uma necessidade, em qualquer ponto da hierarquia, precisa ser atendida antes que a necessidade de nível seguinte se manifeste. Se uma necessidade não for satisfeita, a pessoa ficará estacionada nesse nível de motivação.\n\nÉ CORRETO apenas o que se afirma em:',
+    options: [
+      { letter: 'A', text: 'I e II.' },
+      { letter: 'B', text: 'I e III.' },
+      { letter: 'C', text: 'II e III.' },
+      { letter: 'D', text: 'III e IV.' },
+      { letter: 'E', text: 'IV e V.' }
+    ],
+    correctAnswer: 'E',
+    explanation: 'Na hierarquia de necessidades de Maslow, o ser humano desenvolve-se de maneira contínua, orientando-se para a autorrealização (IV), e uma necessidade inferior não perfeitamente satisfeita age como obstáculo de regressão ou fixação temporária, impedindo a manifestação clara de necessidades superiores subsequentes (V).'
+  },
+  {
+    id: 36,
+    category: 'Revisão de Prova',
+    title: 'Questão 4 - Estilos de Liderança na Prática',
+    source: 'Revisão de Prova (Basile)',
+    text: 'A Escola das Relações Humanas foi uma das primeiras vertentes da Administração que teve, como objeto de estudo, a Liderança. Entre os vários estudos sobre liderança nessa escola, destacam-se aqueles classificados como teorias sobre estilos de liderança: autocrático, liberal e democrático.\n\nConsiderando essas classificações dos estilos de liderança, analise as seguintes situações:\n\nI. Vanderlei é um funcionário novato em uma pequena distribuidora de doces e está muito motivado a "mostrar serviço" na nova empresa. Ele conversa com um funcionário com mais tempo de casa sobre suas ideias e diz gostará de demonstrá-las ao seu superior. Entretanto o antigo funcionário o adverte da pouca abertura do superior em receber sugestões de seus subordinados, demonstrando o caráter centralizador e suficiente em tomar decisões do chefe.\nII. Silva, gerente comercial de uma pequena rede de supermercados, sempre foi considerado um chefe que permite que seus subordinados tomem, em grupo, suas próprias decisões, interferindo, pouco ou nada nestas decisões.\nIII. João, Diretor de TI de uma média empresa, está passando por uma fase delicada: ele precisa realizar um alto investimento em tecnologia de informação para diversas áreas e está inseguro quanto aos rumos desses investimentos. Assim, ele convoca uma reunião com diversos colaboradores das áreas de desenvolvimento, segurança e infraestrutura de TI para solicitar informações sobre novas tecnologias. Dessa forma, João acredita que poderá tomar uma decisão mais ajustada às necessidades da empresa.\n\nA ordem CORRETA das classificações dos estilos de liderança que melhor se encaixa para cada situação é a seguinte:',
+    options: [
+      { letter: 'A', text: 'I. liberal, II. democrática e III. autocrática.' },
+      { letter: 'B', text: 'I. liberal, II. autocrática e III. democrática.' },
+      { letter: 'C', text: 'I. democrática, II. autocrática e III. liberal.' },
+      { letter: 'D', text: 'I. autocrática, II. democrática e III. liberal.' },
+      { letter: 'E', text: 'I. autocrática, II. liberal e III. democrática.' }
+    ],
+    correctAnswer: 'E',
+    explanation: 'A situação I descreve um perfil altamente centralizador e que rejeita sugestões (autocrático). A situação II revela um líder que delegou totalmente a decisão ao grupo, quase sem intervenção (laissez-faire ou liberal). A situação III detalha o processo de escuta e participação conjunta com fins decisórios estratégicos (democrático).'
+  },
+  {
+    id: 37,
+    category: 'Revisão de Prova',
+    title: 'Questão 5 - Transformações no Mercado Contemporâneo',
+    source: 'Revisão de Prova (Basile)',
+    text: 'A globalização é um processo que produz relações e conexões entre países, grupos econômicos, sociais, culturais e profissionais. As Organizações de trabalho, as empresas e os profissionais de todos os segmentos antigos e contemporâneos estão, portanto, inseridos nesse contexto. As transformações presentes nesse cenário causam impacto no indivíduo e nas relações de trabalho, constituindo-se como exigência prioritária no que diz respeito à formação e ao comportamento do trabalhador contemporâneo.\n\nA partir das ideias expostas, é CORRETO afirmar:',
+    options: [
+      { letter: 'A', text: 'O profissional contemporâneo deve restringir sua formação a conhecimentos gerais e a conhecimento de língua estrangeira como diferencial competitivo.' },
+      { letter: 'B', text: 'A necessidade de atualização apresenta-se como algo irrelevante no contexto contemporâneo.' },
+      { letter: 'C', text: 'O investimento em formação continuada torna-se uma premissa secundária na contemporaneidade.' },
+      { letter: 'D', text: 'O mercado avalia e seleciona o conjunto de competências e habilidades fundamentais para o exercício profissional no cenário atual.' },
+      { letter: 'E', text: 'O investimento no conhecimento e nas habilidades profissionais torna-se desnecessário na atualidade.' }
+    ],
+    correctAnswer: 'D',
+    explanation: 'Num mundo globalizado e volátil, o mercado corporativo avalia continuamente e seleciona colaboradores com base em um conjunto de capacidades técnicas e socioemocionais (habilidades e competências complexas), tornando o aprimoramento constante indispensável.'
+  },
+  {
+    id: 38,
+    category: 'Revisão de Prova',
+    title: 'Questão 6 - Organizações como Culturas e seus Artefatos',
+    source: 'Revisão de Prova (Basile)',
+    text: 'A ideia de enxergar as organizações como culturas, nas quais existe um sistema de convicções compartilhado por todos os membros, é um fenômeno que ganhou forças a partir de meados da década de 1980.\n\nConsiderando os aspectos da cultura nas organizações, avalie as asserções a seguir e a relação proposta entre elas:\n\nI. As organizações são concebidas como produtoras de artefatos ou elementos culturais, como rituais, lendas e cerimônias, além de seus bens e serviços característicos.\n\nPORQUE\n\nII. As produções culturais têm o papel de conferir regularidade e previsibilidade nas relações entre os diversos participantes, além de promover adaptação, tanto no âmbito interno quanto no ambiente externo da organização.\n\nA respeito dessas asserções, assinale a opção correta.',
+    options: [
+      { letter: 'A', text: 'As asserções I e II são proposições falsas.' },
+      { letter: 'B', text: 'As asserções I e II são proposições verdadeiras, e a segunda é uma justificativa da primeira.' },
+      { letter: 'C', text: 'A asserção I é uma proposição verdadeira, e a asserção II é uma proposição falsa.' },
+      { letter: 'D', text: 'A asserção I é uma proposição falsa, e a asserção II é uma proposição verdadeira.' },
+      { letter: 'E', text: 'As asserções I e II são proposições verdadeiras, mas a segunda não é uma justificativa correta da primeira.' }
+    ],
+    correctAnswer: 'E',
+    explanation: 'Ambas as asserções são verdadeiras: a empresa é indutora ativa e difusora de símbolos (I), e essas produções têm real impacto estabilizador e promotor de comportamento social previsível (II). Porém, a segunda asserção não funciona como justificativa causal direta para a primeira afirmação.'
+  },
+  {
+    id: 39,
+    category: 'Revisão de Prova',
+    title: 'Questão 7 - Seleção Baseação em Inteligência Emocional',
+    source: 'Revisão de Prova (Basile)',
+    text: 'Avalie as seguintes afirmações e a relação proposta entre elas:\n\nI. Cada vez mais as organizações estão selecionando funcionários que elas acreditam ter altos níveis de inteligência emocional.\n\nPORQUE\n\nII. A manifestação de emoções é importante para a negociação e para o atendimento ao cliente.\n\nA respeito dessas afirmações, assinale a opção CORRETA.',
+    options: [
+      { letter: 'A', text: 'As duas afirmações são falsas.' },
+      { letter: 'B', text: 'As duas afirmações são verdadeiras, e a segunda justifica a primeira.' },
+      { letter: 'C', text: 'A primeira afirmação é verdadeira e a segunda é falsa.' },
+      { letter: 'D', text: 'A segunda afirmação é verdadeira e a primeira é falsa.' },
+      { letter: 'E', text: 'As duas afirmações são verdadeiras e a segunda não justifica a primeira.' }
+    ],
+    correctAnswer: 'B',
+    explanation: 'A seleção pautada por IE (I) justifica-se exatamente porque a estabilidade interior e resiliência interpessoal do trabalhador influenciam de forma direta na performance de negociações difíceis e atendimentos complexos (II).'
+  },
+  {
+    id: 40,
+    category: 'Revisão de Prova',
+    title: 'Questão 8 - Estudo de Caso de Clima: Neuza vs Raquel',
+    source: 'Revisão de Prova (Basile)',
+    text: 'Na sapataria do Sr. Norberto, existem duas atendentes, e ele decidiu oferecer-lhes um treinamento de atendimento ao cliente. Uma delas, a Neuza, é bem humorada, consegue controlar-se diante da agressividade de alguns clientes, procura parcerias amigáveis com concorrentes e soluciona adversidades de forma flexível. Já sua colega Raquel sempre se queixa de que as pessoas não gostam dela, sente-se inferiorizada, está constantemente insatisfeita com o próprio corpo e visualiza privilégios injustos na colega, mesmo recebendo tratamento de trabalho idêntico.\n\nQue conceitos explicariam o comportamento de Neuza e o de Raquel, respectivamente?',
+    options: [
+      { letter: 'A', text: 'Autoestima baixa e percepção adequada.' },
+      { letter: 'B', text: 'Percepção adequada e trabalho em equipe.' },
+      { letter: 'C', text: 'inteligência emocional e baixa autoestima.' },
+      { letter: 'D', text: 'Trabalho em equipe e baixa inteligência emocional.' },
+      { letter: 'E', text: 'Criatividade e liderança deficitária.' }
+    ],
+    correctAnswer: 'C',
+    explanation: 'Neuza manifesta elevado controle pessoal, bom humor e resolução inteligente construtiva (inteligência emocional), ao passo que Raquel exibe autodesprezo, sentimentos de inferioridade irracionais e inseguranças agudas (baixa autoestima).'
+  },
+  {
+    id: 41,
+    category: 'Revisão de Prova',
+    title: 'Questão 9 - Habilidades Cruciais da Liderança',
+    source: 'Revisão de Prova (Basile)',
+    text: 'Um dos grandes desafios da administração é lidar com pessoas. Saber compreendê-las é importante para tomar uma decisão acertada em um ambiente dinâmico e complexo. Um administrador que deseja ser um líder deve desenvolver habilidades e capacidades para motivar pessoas em busca dos objetivos.\n\nAssinale a alternativa em que os dois adjetivos identificam habilidades corretas de um líder.',
+    options: [
+      { letter: 'A', text: 'Proativo e tímido.' },
+      { letter: 'B', text: 'Comunicativo e eufórico.' },
+      { letter: 'C', text: 'Motivado e disfórico.' },
+      { letter: 'D', text: 'Empático e inseguro.' },
+      { letter: 'E', text: 'Assertivo e flexível.' }
+    ],
+    correctAnswer: 'E',
+    explanation: 'A liderança madura e integradora depende de atitudes assertivas (firmeza clara sem agressividade na comunicação) concomitantes à flexibilidade adaptativa (capacidade de lidar generosamente com imprevistos e escutar múltiplas ideias).'
+  },
+  {
+    id: 42,
+    category: 'Revisão de Prova',
+    title: 'Questão 10 - Fatores Essenciais do Clima Organizacional',
+    source: 'Revisão de Prova (Basile)',
+    text: 'Em um cenário de constantes mudanças e transformações, as organizações buscam manter elevados níveis de satisfação e envolvimento através do monitoramento do Clima Organizacional. Para haver um clima organizacional positivo, considera-se necessário:\n\nI. trabalhar a motivação da equipe, o seu grau de satisfação e, consequentemente, a qualidade de seu trabalho.\nII. ter percepções coletivas positivas, por meio da experimentação de práticas, de políticas, de estrutura, de processos e de sistemas.\nIII. ter políticas que promovam a percepção positiva do ambiente organizacional, independentemente dos valores e das crenças compartilhados.\nIV. direcionar esforços aos clientes externos, já que os clientes internos vão se adaptando a condições de trabalho e promovendo um clima organizacional positivo.\n\nOs itens que completam adequadamente a frase acima são os seguintes:',
+    options: [
+      { letter: 'A', text: 'I e III.' },
+      { letter: 'B', text: 'I e II.' },
+      { letter: 'C', text: 'II e IV.' },
+      { letter: 'D', text: 'II e III.' },
+      { letter: 'E', text: 'I e IV.' }
+    ],
+    correctAnswer: 'B',
+    explanation: 'As assertivas I e II estão corretas. A assertiva III é falsa pois as políticas organizacionais não devem ignorar a cultura já partilhada. A assertiva IV está incorreta pois os colaboradores internos não se adaptam passivamente, sendo pilares indispensáveis na constituição de um clima sadio.'
+  },
+  {
+    id: 43,
+    category: 'Revisão de Prova',
+    title: 'Questão 11 - Tomadas de Decisão na Crise MWA',
+    source: 'Revisão de Prova (Basile)',
+    text: 'Diante de uma grave crise de vendas, a montadora MWA eliminou diversas funções e executou elevadas demissões. Priorizou investimentos exclusivamente nas áreas comercial, marketing e financeira para tentar escoar estoques. Isso, no entanto, semeou grave insatisfação multissetorial nas áreas de produção, administrativo e de tecnologia de informação, alimentando comportamentos negativos.\n\nPara que o gestor de pessoas auxilie o presidente da MWA a projetar um clima favorável e motivar efetivamente essas equipes, analise as condutas sugeridas:\n\nI. Promover políticas de harmonia na organização, sem dar muito crédito ao problema, demonstrando a importância do conflito para o engajamento dos colaboradores no negócio.\nII. Expandir o programa de remuneração estratégica, motivando os colaboradores a proporcionar resultados de acordo com metas estabelecidas, porém exequíveis diante do cenário mercadológico.\nIII. Ignorar totalmente o problema em relação aos conflitos de setores, acreditando que, quando a empresa voltar ao crescimento, a satisfação volta a reinar no ambiente organizacional.\nIV. Expor a situação atual aos líderes de cada setor, demonstrar que a organização é sólida e que esse momento delicado irá passar com a contribuição e o engajamento de todos os envolvidos e demonstrar a importância de cada um nesse contexto, independentemente da área de atuação.\nV. Buscar a participação dos gestores nas soluções a curto prazo, porém sabendo que a satisfação de todos os setores tem que estar pautada nos objetivos organizacionais e que resíduos de ressentimentos nos colaboradores existirão.\n\nÉ correto apenas o que se afirma em:',
+    options: [
+      { letter: 'A', text: 'I, II e IV.' },
+      { letter: 'B', text: 'I, III e IV.' },
+      { letter: 'C', text: 'II, IV e V.' },
+      { letter: 'D', text: 'I, III e V.' },
+      { letter: 'E', text: 'II, III e V.' }
+    ],
+    correctAnswer: 'C',
+    explanation: 'As soluções de gestão corretas fundamentam-se em remuneração participativa saudável (II), comunicação transparente e compartilhada com as lideranças para dar senso de pertencimento e união (IV) e engrenar de forma realista o diálogo cooperativo dos gerentes sabendo que sentimentos negativos ainda requererão tempo para diluição (V).'
+  },
+  {
+    id: 44,
+    category: 'Revisão de Prova',
+    title: 'Questão 12 - Recrutamento e Desempenho Empírico',
+    source: 'Revisão de Prova (Basile)',
+    text: 'Avalie as asserções a seguir e a relação proposta entre elas:\n\nI. A Inteligência Emocional (IE) é uma característica comportamental altamente desejável e buscada no contexto do trabalho. Algumas organizações incluem, em seus processos seletivos, a avaliação dessa habilidade, centrando sua atenção em qualidades pessoais, como iniciativa, empatia, adaptabilidade e capacidade de persuasão.\n\nPORQUE\n\nII. De um modo geral, evidências empíricas sugerem que, quanto maior a inteligência emocional de uma pessoa, melhor será o seu desempenho profissional, mostrando que é uma das qualidades humanas que mais contribui para a excelência no mundo do trabalho, que pode determinar a permanência ou não do profissional na organização e que interfere na capacidade de flexibilização do profissional às exigências do mercado de trabalho.\n\nA respeito dessas asserções, assinale a opção correta.',
+    options: [
+      { letter: 'A', text: 'As duas asserções são falsas.' },
+      { letter: 'B', text: 'A primeira asserção é falsa, e a segunda é verdadeira.' },
+      { letter: 'C', text: 'A primeira asserção é verdadeira, e a segunda é falsa.' },
+      { letter: 'D', text: 'As duas asserções são verdadeiras, e a segunda justifica a primeira.' },
+      { letter: 'E', text: 'As duas asserções são verdadeiras, e a segunda não justifica a primeira.' }
+    ],
+    correctAnswer: 'D',
+    explanation: 'As duas asserções são inteiramente corretas e a II descreve os motivos do sucesso prático da IE na rotina corporativa, o que fundamenta e justifica a inclusão destas mensurações em dinâmicas de seleção moderna de talentos (I).'
+  },
+  {
+    id: 45,
+    category: 'Revisão de Prova',
+    title: 'Questão 13 - As Dimensões da Função Direção',
+    source: 'Revisão de Prova (Basile)',
+    text: 'A função direção na administração é uma das funções-chave do processo administrativo (junto com planejamento, organização e controle). Ela envolve apoiar, orientar, guiar e motivar os colaboradores para o alcance produtivo das metas.\n\nNo que tange às características de direção, julgue as afirmações:\n\nI. A função direção também envolve tomar decisões importantes que afetam a organização e seus membros, isso inclui decisões estratégicas, operacionais ou relacionadas ao pessoal.\nII. A motivação é muito importante para o desenvolvimento e alcance dos resultados; é baseada em fatores considerados satisfacientes e não satisfacientes, de acordo com o Maslow.\nIII. Os estilos de liderança devem ser aplicados de acordo com a situação ocorrida dentro das organizações, pois estas não possuem um estilo único e se adaptam a cada pessoa e a cada momento.\n\nÉ correto o que se afirma em:',
+    options: [
+      { letter: 'A', text: 'I e II, apenas.' },
+      { letter: 'B', text: 'I e III, apenas.' },
+      { letter: 'C', text: 'II, apenas.' },
+      { letter: 'D', text: 'III, apenas.' },
+      { letter: 'E', text: 'I, II e III.' }
+    ],
+    correctAnswer: 'B',
+    explanation: 'I está correta por caracterizar a atuação ativa da direção. III está correta por definir a essência contingencial-situacional da liderança de gestores. II é falsa porque a distinção entre os fatores "higienizadores/não-satisfacientes" e "motivadores/satisfacientes" é um postulado elementar de Frederick Herzberg, e não do modelo hierárquico de Abraham Maslow.'
+  },
+  {
+    id: 46,
+    category: 'Revisão de Prova',
+    title: 'Questão 14 - Pesquisas de Clima e Descontentamento',
+    source: 'Revisão de Prova (Basile)',
+    text: 'É fundamental que o clima organizacional seja propício para o fomento a inovação e o domínio de mudanças adaptativas frente à concorrência. Com base neste conceito, avalie:\n\nI. O clima organizacional sinaliza como o contexto do trabalho afeta o comportamento e as atitudes das pessoas.\nII. Os indicadores relacionados ao absenteísmo, à rotatividade, aos acidentes de trabalho e à produtividade indicam que o clima organizacional está com problemas e excluem a necessidade de uma pesquisa de clima.\nIII. O clima envolve percepções compartilhadas entre os membros da organização, a partir das relações com suas políticas e práticas.\n\nÉ correto o que se afirma em:',
+    options: [
+      { letter: 'A', text: 'I, apenas.' },
+      { letter: 'B', text: 'I e III, apenas.' },
+      { letter: 'C', text: 'II e III, apenas.' },
+      { letter: 'D', text: 'I, II e III.' },
+      { letter: 'E', text: 'II, apenas.' }
+    ],
+    correctAnswer: 'B',
+    explanation: 'As colocações I e III traduzem o clima de forma fiel. A afirmativa II é equivocada: indicadores como faltas sucessivas e alta rotatividade são alertas gritantes de um ambiente adoecido, fazendo com que a implementação de pesquisas de clima detalhadas seja duplamente urgente para apontar o diagnóstico exato.'
+  },
+  {
+    id: 47,
+    category: 'Revisão de Prova',
+    title: 'Questão 15 - Alinhamento Cultural e Estruturas',
+    source: 'Revisão de Prova (Basile)',
+    text: 'Para um bom resultado da empresa o gestor deve construir uma equipe e uma cultura organizacional bem-sucedida. Avalie as premissas sugeridas:\n\nI. A cultura organizacional desejada deve corresponder à estratégia definida.\nII. O processo de contratação deve ser conduzido de forma adequada de forma que garanta a entrada de pessoas adequadas ao cargo.\nIII. A estrutura informal da empresa deve ser desestimulada, pois prejudica a estrutura formal.\n\nÉ correto o que se afirma em:',
+    options: [
+      { letter: 'A', text: 'I, apenas.' },
+      { letter: 'B', text: 'II, apenas.' },
+      { letter: 'C', text: 'I e II, apenas.' },
+      { letter: 'D', text: 'I e III, apenas.' },
+      { letter: 'E', text: 'I, II e III.' }
+    ],
+    correctAnswer: 'C',
+    explanation: 'I e II estão corretas e são balizas fundamentais para a estabilidade e sinergia da corporação. III é incorreta porque a estrutura informal espontânea é inerente à natureza social do homem e, se direcionada de maneira amigável, atua positivamente acoplada aos objetivos formais.'
+  },
+  {
+    id: 48,
+    category: 'Revisão de Prova',
+    title: 'Questão 16 - A Função do Conflito nas Equipes',
+    source: 'Revisão de Prova (Basile)',
+    text: 'Conflitos são fenômenos psicológicos e dinâmicos, que ocorrem em qualquer ambiente social de trabalho.\n\nDe acordo com as visões integrativas das relações humanas, qual é a principal utilidade prática e construtiva do conflito para as equipes?',
+    options: [
+      { letter: 'A', text: 'Corrigir os defeitos alheios.' },
+      { letter: 'B', text: 'Substituir o autoconhecimento.' },
+      { letter: 'C', text: 'Mobilizar acordos entre as pessoas.' },
+      { letter: 'D', text: 'Encerrar relacionamentos desgastados.' },
+      { letter: 'E', text: 'Estimular a competição entre pessoas.' }
+    ],
+    correctAnswer: 'C',
+    explanation: 'Em equipes amadurecidas, o conflito estimula as pessoas a saírem de zonas de conforto, forçando a comunicação construtiva de forma a cooperar na construção de soluções e gerando novos acordos vantajosos compartilhados.'
+  },
+  {
+    id: 49,
+    category: 'Revisão de Prova',
+    title: 'Questão 17 - Comportamentos para Equipes Negociadoras',
+    source: 'Revisão de Prova (Basile)',
+    text: 'Para uma negociação ser eficaz e eficiente, é fundamental ter um bom clima organizacional e um ambiente de trabalho agradável.\n\nJulgue quais são os comportamentos pessoais indispensáveis para a manutenção rotineira de um clima positivo:\n\nI. Relacionamento interpessoal amigável.\nII. Confiança e respeito mútuos.\nIII. Empatia e bom senso.\n\nÉ correto o que se afirma em:',
+    options: [
+      { letter: 'A', text: 'I, II e III.' },
+      { letter: 'B', text: 'I e III, apenas.' },
+      { letter: 'C', text: 'II e III, apenas.' },
+      { letter: 'D', text: 'II, apenas.' },
+      { letter: 'E', text: 'I, apenas.' }
+    ],
+    correctAnswer: 'A',
+    explanation: 'Todas as alternativas (I, II e III) caracterizam os comportamentos vitais cotidianos para incentivar relações calmas, produtivas, transparentes e psicologicamente seguras dentro dos times.'
+  },
+  {
+    id: 50,
+    category: 'Revisão de Prova',
+    title: 'Questão 18 - Metas Fundantes do Campo Organizacional',
+    source: 'Revisão de Prova (Basile)',
+    text: 'Estudos sobre comportamento organizacional buscam compreender cientificamente como os indivíduos e grupos interagem no habitat corporativo.\n\nQuais são as quatro metas elementares investigativas e pragmáticas do comportamento organizacional, em sua ordem sequencial acadêmica de consecução?',
+    options: [
+      { letter: 'A', text: 'Descrever; Compreender; Prever; Controlar' },
+      { letter: 'B', text: 'Compreender; Descrever; Prever; Controlar' },
+      { letter: 'C', text: 'Compreender; Prever; Controlar; Descrever.' },
+      { letter: 'D', text: 'Prever; Controlar; Descrever; Compreender.' },
+      { letter: 'E', text: 'Prever; Compreender; Controlar; Descrever.' }
+    ],
+    correctAnswer: 'A',
+    explanation: 'As quatro etapas cronológicas clássicas que sintetizam os objetivos do campo são: Descrever os desvios, Compreender as causas raiz, Prever desfechos lógicos e Controlar/Influenciar positivamente a produtividade e o bem-estar.'
+  },
+  {
+    id: 51,
+    category: 'Revisão de Prova',
+    title: 'Questão 19 - As Quatro Forças Ambientais e Sociais',
+    source: 'Revisão de Prova (Basile)',
+    text: 'As organizações modernas são expostas a um complexo conjunto de forças em sua natureza, as quais costumam ser teorizadas em quatro vetores primários integrados: pessoas, estruturas, tecnologia e ambiente (conforme Newstrom, 2011).\n\nConsiderando a atuação dessas forças, julgue os itens:\n\nI. As pessoas compõem o sistema social interno de uma organização.\nII. A tecnologia fornece os recursos com os quais as pessoas trabalham.\nIII. A estrutura define o relacionamento formal e a utilização das pessoas nas organizações.\nIV. O Ambiente fornece os recursos com os quais as pessoas trabalham.\n\nÉ correto apenas o que se afirma em:',
+    options: [
+      { letter: 'A', text: 'I e II.' },
+      { letter: 'B', text: 'III e IV.' },
+      { letter: 'C', text: 'I, II e IV.' },
+      { letter: 'D', text: 'I, II e III.' },
+      { letter: 'E', text: 'II, III e IV.' }
+    ],
+    correctAnswer: 'D',
+    explanation: 'Os itens I, II e III representam com exatidão a natureza dos eixos internos e sociais do comportamento nas empresas. O item IV é incorreto porque o eixo do ambiente de Newstrom compreende as leis governamentais, ecossistemas do mercado, clientes e pressões sociopolíticas externas, transbordando o fornecimento físico direto de "recursos de trabalho".'
   }
 ];

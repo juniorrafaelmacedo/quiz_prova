@@ -26,7 +26,7 @@ import {
 
 export default function App() {
   const [view, setView] = useState<'dashboard' | 'quiz' | 'stats' | 'review'>('dashboard');
-  const [activeSubject, setActiveSubject] = useState<'Comportamento Humano nas Organizações' | 'Métodos e Inovação Científica'>('Comportamento Humano nas Organizações');
+  const [activeSubject, setActiveSubject] = useState<'Comportamento Humano nas Organizações' | 'Métodos e Inovação Científica' | 'Revisão de Prova'>('Comportamento Humano nas Organizações');
   const [attempts, setAttempts] = useState<QuizAttempt[]>([]);
   const [activeQuestions, setActiveQuestions] = useState<Question[]>([]);
   const [activeMode, setActiveMode] = useState<'complete' | 'quick' | 'themed'>('complete');
@@ -51,9 +51,11 @@ export default function App() {
     } else {
       // Filtrar por matéria ativa se estiver em modo Completo ou Rápido!
       if (activeSubject === 'Comportamento Humano nas Organizações') {
-        selectedQuestions = selectedQuestions.filter((q) => q.category !== 'Métodos e Inovação Científica');
-      } else {
+        selectedQuestions = selectedQuestions.filter((q) => q.category !== 'Métodos e Inovação Científica' && q.category !== 'Revisão de Prova');
+      } else if (activeSubject === 'Métodos e Inovação Científica') {
         selectedQuestions = selectedQuestions.filter((q) => q.category === 'Métodos e Inovação Científica');
+      } else {
+        selectedQuestions = selectedQuestions.filter((q) => q.category === 'Revisão de Prova');
       }
     }
 
@@ -147,12 +149,12 @@ export default function App() {
       <main className="flex-1 max-w-5xl w-full mx-auto px-4 py-8 relative z-10 animate-fade-in">
         {/* Selector de Matéria (Tabs) */}
         {(view === 'dashboard' || view === 'stats') && (
-          <div className="flex p-1 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl max-w-2xl mx-auto mb-8 shadow-2xl relative z-20">
+          <div className="flex flex-col sm:flex-row p-1 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl max-w-3xl mx-auto mb-8 shadow-2xl relative z-20 gap-1 sm:gap-0">
             <button
               onClick={() => setActiveSubject('Comportamento Humano nas Organizações')}
-              className={`flex-1 py-3 px-4 rounded-xl text-[11px] sm:text-xs font-black tracking-wider transition-all uppercase flex items-center justify-center gap-2 cursor-pointer ${
+              className={`flex-1 py-3 px-4 rounded-xl text-[10px] sm:text-xs font-black tracking-wider transition-all uppercase flex items-center justify-center gap-2 cursor-pointer ${
                 activeSubject === 'Comportamento Humano nas Organizações'
-                  ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg scale-[1.02]'
+                  ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg scale-[1.01]'
                   : 'text-white/60 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -161,14 +163,25 @@ export default function App() {
             </button>
             <button
               onClick={() => setActiveSubject('Métodos e Inovação Científica')}
-              className={`flex-1 py-3 px-4 rounded-xl text-[11px] sm:text-xs font-black tracking-wider transition-all uppercase flex items-center justify-center gap-2 cursor-pointer ${
+              className={`flex-1 py-3 px-4 rounded-xl text-[10px] sm:text-xs font-black tracking-wider transition-all uppercase flex items-center justify-center gap-2 cursor-pointer ${
                 activeSubject === 'Métodos e Inovação Científica'
-                  ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg scale-[1.02]'
+                  ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg scale-[1.01]'
                   : 'text-white/60 hover:text-white hover:bg-white/5'
               }`}
             >
               <BookOpen className="w-4 h-4 text-white" />
-              Métodos e Inovação Científica
+              Inovação Científica
+            </button>
+            <button
+              onClick={() => setActiveSubject('Revisão de Prova')}
+              className={`flex-1 py-3 px-4 rounded-xl text-[10px] sm:text-xs font-black tracking-wider transition-all uppercase flex items-center justify-center gap-2 cursor-pointer ${
+                activeSubject === 'Revisão de Prova'
+                  ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg scale-[1.01]'
+                  : 'text-white/60 hover:text-white hover:bg-white/5'
+              }`}
+            >
+              <HelpCircle className="w-4 h-4 text-white" />
+              Revisão de Prova
             </button>
           </div>
         )}

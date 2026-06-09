@@ -8,7 +8,8 @@ export type CategoryType =
   | 'Cultura e Clima'
   | 'Gestão Estratégica & CRM'
   | 'Inteligência Emocional'
-  | 'Métodos e Inovação Científica';
+  | 'Métodos e Inovação Científica'
+  | 'Revisão de Prova';
 
 export interface Question {
   id: number;

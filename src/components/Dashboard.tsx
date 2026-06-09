@@ -24,7 +24,7 @@ import {
 
 interface DashboardProps {
   attempts: QuizAttempt[];
-  activeSubject: 'Comportamento Humano nas Organizações' | 'Métodos e Inovação Científica';
+  activeSubject: 'Comportamento Humano nas Organizações' | 'Métodos e Inovação Científica' | 'Revisão de Prova';
   onStartQuiz: (mode: 'complete' | 'quick' | 'themed', count?: number, category?: CategoryType) => void;
   onViewStats: () => void;
   onViewLastReview: (attempt: QuizAttempt) => void;
@@ -36,17 +36,17 @@ export function Dashboard({ attempts, activeSubject, onStartQuiz, onViewStats, o
   // Identificar qual matéria pertence a tentativa (compatível retroativamente)
   const getAttemptSubject = (attempt: QuizAttempt) => {
     if (attempt.category) {
-      return attempt.category === 'Métodos e Inovação Científica' 
-        ? 'Métodos e Inovação Científica' 
-        : 'Comportamento Humano nas Organizações';
+      if (attempt.category === 'Métodos e Inovação Científica') return 'Métodos e Inovação Científica';
+      if (attempt.category === 'Revisão de Prova') return 'Revisão de Prova';
+      return 'Comportamento Humano nas Organizações';
     }
     if (attempt.answers.length > 0) {
       const qId = attempt.answers[0].questionId;
       const q = QUESTIONS_DATA.find(item => item.id === qId);
       if (q) {
-        return q.category === 'Métodos e Inovação Científica' 
-          ? 'Métodos e Inovação Científica' 
-          : 'Comportamento Humano nas Organizações';
+        if (q.category === 'Métodos e Inovação Científica') return 'Métodos e Inovação Científica';
+        if (q.category === 'Revisão de Prova') return 'Revisão de Prova';
+        return 'Comportamento Humano nas Organizações';
       }
     }
     return 'Comportamento Humano nas Organizações';
@@ -72,9 +72,13 @@ export function Dashboard({ attempts, activeSubject, onStartQuiz, onViewStats, o
         'Gestão Estratégica & CRM',
         'Inteligência Emocional'
       ]
-    : [
-        'Métodos e Inovação Científica'
-      ];
+    : activeSubject === 'Métodos e Inovação Científica'
+      ? [
+          'Métodos e Inovação Científica'
+        ]
+      : [
+          'Revisão de Prova'
+        ];
 
   const getCategoryCount = (cat: CategoryType) => {
     return QUESTIONS_DATA.filter(q => q.category === cat).length;
@@ -83,9 +87,11 @@ export function Dashboard({ attempts, activeSubject, onStartQuiz, onViewStats, o
   // Filtrar o total de questões disponíveis para a matéria ativa
   const subjectTotalQuestions = QUESTIONS_DATA.filter(q => {
     if (activeSubject === 'Comportamento Humano nas Organizações') {
-      return q.category !== 'Métodos e Inovação Científica';
-    } else {
+      return q.category !== 'Métodos e Inovação Científica' && q.category !== 'Revisão de Prova';
+    } else if (activeSubject === 'Métodos e Inovação Científica') {
       return q.category === 'Métodos e Inovação Científica';
+    } else {
+      return q.category === 'Revisão de Prova';
     }
   }).length;
 
@@ -102,12 +108,16 @@ export function Dashboard({ attempts, activeSubject, onStartQuiz, onViewStats, o
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-tight">
             {activeSubject === 'Comportamento Humano nas Organizações' 
               ? 'Portal de Treinamento e Quiz Interativo' 
-              : 'Metodologia Científica e Normatização'}
+              : activeSubject === 'Métodos e Inovação Científica'
+                ? 'Metodologia Científica e Normatização'
+                : 'Revisão Preparatória para a Prova'}
           </h1>
           <p className="text-white/70 text-xs sm:text-sm max-w-xl leading-relaxed">
             {activeSubject === 'Comportamento Humano nas Organizações'
               ? 'Domine os conceitos de Liderança, Clima, Cultura, Teorias de Tomada de Decisão e Inteligência Emocional com base em testes acadêmicos oficiais e explicações científicas detalhadas.'
-              : 'Aprimore seus conhecimentos em tipos de pesquisas, citações diretas/indiretas, normas ABNT de artigos e projetos, e metodologias de análise qualitativa/quantitativa.'}
+              : activeSubject === 'Métodos e Inovação Científica'
+                ? 'Aprimore seus conhecimentos em tipos de pesquisas, citações diretas/indiretas, normas ABNT de artigos e projetos, e metodologias de análise qualitativa/quantitativa.'
+                : 'Responda às 19 questões oficiais de revisão de estudo propostas pelo Prof. Basile sobre Comportamento Humano nas Organizações.'}
           </p>
         </div>
 

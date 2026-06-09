@@ -22,7 +22,7 @@ import {
 
 interface StatsViewProps {
   attempts: QuizAttempt[];
-  activeSubject: 'Comportamento Humano nas Organizações' | 'Métodos e Inovação Científica';
+  activeSubject: 'Comportamento Humano nas Organizações' | 'Métodos e Inovação Científica' | 'Revisão de Prova';
   onClearHistory: () => void;
   onBackToMenu: () => void;
 }
@@ -33,17 +33,17 @@ export function StatsView({ attempts, activeSubject, onClearHistory, onBackToMen
   // Identificar qual matéria pertence a tentativa (compatível retroativamente)
   const getAttemptSubject = (attempt: QuizAttempt) => {
     if (attempt.category) {
-      return attempt.category === 'Métodos e Inovação Científica' 
-        ? 'Métodos e Inovação Científica' 
-        : 'Comportamento Humano nas Organizações';
+      if (attempt.category === 'Métodos e Inovação Científica') return 'Métodos e Inovação Científica';
+      if (attempt.category === 'Revisão de Prova') return 'Revisão de Prova';
+      return 'Comportamento Humano nas Organizações';
     }
     if (attempt.answers.length > 0) {
       const qId = attempt.answers[0].questionId;
       const q = QUESTIONS_DATA.find(item => item.id === qId);
       if (q) {
-        return q.category === 'Métodos e Inovação Científica' 
-          ? 'Métodos e Inovação Científica' 
-          : 'Comportamento Humano nas Organizações';
+        if (q.category === 'Métodos e Inovação Científica') return 'Métodos e Inovação Científica';
+        if (q.category === 'Revisão de Prova') return 'Revisão de Prova';
+        return 'Comportamento Humano nas Organizações';
       }
     }
     return 'Comportamento Humano nas Organizações';
@@ -57,7 +57,15 @@ export function StatsView({ attempts, activeSubject, onClearHistory, onBackToMen
     return (
       <div className="bg-white/[0.04] backdrop-blur-xl border border-white/10 text-white p-8 rounded-3xl max-w-2xl mx-auto shadow-2xl text-center space-y-6">
         <Trophy className="w-16 h-16 mx-auto text-yellow-500/20 animate-pulse" />
-        <h2 className="text-2xl font-bold tracking-tight text-white/95">Sem histórico para {activeSubject === 'Comportamento Humano nas Organizações' ? 'Comportamento Humano' : 'Inovação Científica'}</h2>
+        <h2 className="text-2xl font-bold tracking-tight text-white/95">
+          Sem histórico para {
+            activeSubject === 'Comportamento Humano nas Organizações' 
+              ? 'Comportamento Humano' 
+              : activeSubject === 'Métodos e Inovação Científica'
+                ? 'Inovação Científica'
+                : 'Revisão de Prova'
+          }
+        </h2>
         <p className="text-white/60 text-sm max-w-md mx-auto leading-relaxed">
           Você ainda não realizou nenhuma tentativa de quiz nesta matéria. Suas estatísticas de desempenho detalhado, gráficos de acertos e relatórios de progresso aparecerão aqui assim que completar a primeira rodada.
         </p>
@@ -80,7 +88,9 @@ export function StatsView({ attempts, activeSubject, onClearHistory, onBackToMen
   // Mapear acertos por categorias da matéria ativa
   const categoriesList = activeSubject === 'Comportamento Humano nas Organizações'
     ? ['Liderança e Poder', 'Cultura e Clima', 'Gestão Estratégica & CRM', 'Inteligência Emocional'] as CategoryType[]
-    : ['Métodos e Inovação Científica'] as CategoryType[];
+    : activeSubject === 'Métodos e Inovação Científica'
+      ? ['Métodos e Inovação Científica'] as CategoryType[]
+      : ['Revisão de Prova'] as CategoryType[];
 
   const catStats = {} as Record<CategoryType, { answered: number; correct: number }>;
   categoriesList.forEach((cat) => {
